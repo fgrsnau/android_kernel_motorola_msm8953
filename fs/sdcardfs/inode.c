@@ -91,7 +91,8 @@ static int sdcardfs_create(struct inode *dir, struct dentry *dentry,
 	dput(parent_dentry);
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb), SDCARDFS_I(dir)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb),
+					SDCARDFS_I(dir)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_eacces;
@@ -158,7 +159,8 @@ static int sdcardfs_unlink(struct inode *dir, struct dentry *dentry)
 	}
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb), SDCARDFS_I(dir)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb),
+						SDCARDFS_I(dir)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_eacces;
@@ -242,7 +244,8 @@ static int sdcardfs_mkdir(struct inode *dir, struct dentry *dentry, umode_t mode
 	}
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb), SDCARDFS_I(dir)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb),
+						SDCARDFS_I(dir)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_eacces;
@@ -378,7 +381,8 @@ static int sdcardfs_rmdir(struct inode *dir, struct dentry *dentry)
 	}
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb), SDCARDFS_I(dir)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(dir->i_sb),
+						SDCARDFS_I(dir)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_eacces;
@@ -436,7 +440,8 @@ static int sdcardfs_rename(struct inode *old_dir, struct dentry *old_dentry,
 	}
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(old_dir->i_sb), SDCARDFS_I(new_dir)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(old_dir->i_sb),
+						SDCARDFS_I(new_dir)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_eacces;
@@ -757,7 +762,8 @@ static int sdcardfs_setattr(struct vfsmount *mnt, struct dentry *dentry, struct 
 		goto out_err;
 
 	/* save current_cred and override it */
-	saved_cred = override_fsids(SDCARDFS_SB(dentry->d_sb), SDCARDFS_I(inode)->data);
+	saved_cred = override_fsids(SDCARDFS_SB(dentry->d_sb),
+						SDCARDFS_I(inode)->data);
 	if (!saved_cred) {
 		err = -ENOMEM;
 		goto out_err;
