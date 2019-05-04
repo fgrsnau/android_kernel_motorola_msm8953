@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 3.18.138 Kernel Configuration
+# Linux/arm64 3.18.139 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -152,7 +152,6 @@ CONFIG_NAMESPACES=y
 # CONFIG_UTS_NS is not set
 # CONFIG_USER_NS is not set
 # CONFIG_PID_NS is not set
-CONFIG_NET_NS=y
 # CONFIG_SCHED_AUTOGROUP is not set
 # CONFIG_SCHED_TUNE is not set
 # CONFIG_SYSFS_DEPRECATED is not set
@@ -2004,6 +2003,7 @@ CONFIG_SERIO_LIBPS2=y
 CONFIG_TTY=y
 # CONFIG_VT is not set
 CONFIG_UNIX98_PTYS=y
+CONFIG_LDISC_AUTOLOAD=y
 # CONFIG_DEVPTS_MULTIPLE_INSTANCES is not set
 # CONFIG_LEGACY_PTYS is not set
 # CONFIG_SERIAL_NONSTANDARD is not set
